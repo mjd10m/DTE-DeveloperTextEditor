@@ -17,7 +17,7 @@ export const putDb = async (content) => {
   const contactDb = await openDB('dte_db', 1)
   const tx = contactDb.transaction('content', 'readwrite')
   const store = tx.objectStore('content')
-  const request = store.add({text:content})
+  const request = store.add({id: 1, text:content})
   const result = await request
   console.log('data saved to the database', result);
 }
